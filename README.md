@@ -1,4 +1,38 @@
+## Table 1
+
+RLHF alignment results on Arena Hard v0.1 for the PPO-tuned BNRM policy model based on Llama-3.1-8B-Instruct. The results are evaluated by GPT-4.1 and two human experts, and all win, tie, and lose rates are reported from the BNRM side.
+
+### GPT-4.1 evaluation
+
+| Evaluator | Model | Opponent | Win rate | Tie rate | Lose rate |
+|---|---|---|---:|---:|---:|
+| GPT-4.1 | BNRM | Llama-3.1-8B-Instruct | 0.4989 | 0.2772 | 0.2239 |
+| GPT-4.1 | BNRM | Mistral-7B-Instruct | 0.5850 | 0.2045 | 0.2105 |
+
+### Human evaluation
+
+| Evaluator | Model | Opponent | Win rate | Tie rate | Lose rate |
+|---|---|---|---:|---:|---:|
+| Human evaluator 1 | BNRM | Llama-3.1-8B-Instruct | 0.5200 | 0.0600 | 0.4200 |
+| Human evaluator 2 | BNRM | Llama-3.1-8B-Instruct | 0.5000 | 0.3000 | 0.2000 |
+| Human Average | BNRM | Llama-3.1-8B-Instruct | 0.5100 | 0.1800 | 0.3100 |
+
+
 ## Table 2
+
+Comparison of factor interpretability between the main-experiment BNRM and variants across different runs, a different model, and a different dataset. Here, the different model setting uses Gemma2-2B-it, and the different dataset setting uses Skywork-Preference-v0.2 (SP).
+
+| Semantic family | Main-exp. BNRM | Different runs-1 | Different runs-2 | Different model | Different dataset |
+|---|---|---|---|---|---|
+| Prompt repetition / marker leakage | 236, 55, 421 | -- | 231, 490, 746, 959 | 285 | 1 |
+| Overly shallow responses / one-line code / incomplete implementation | 238, 586, 545, 443 | 264, 737, 821, 884 | 128, 396 | 146, 456 | 65, 1020 |
+| Step-by-step guidance / list-style / template-like how-to | 493, 491 | 370 | 182 | 146 | 587, 958, 972 |
+| Safety refusal / safety-domain behavior / polite alternative suggestions | 343, 433 | 205, 823, 917 | 396, 966 | 428, 749 | 65, 662, 958 |
+| Mathematical / formal / concise problem-solving style | 918 | 536, 821 | -- | -- | 856 |
+| Low-quality / meaningless / chaotic outputs | 2 | -- | 93, 839 | 285 | 1 |
+| Unsafe direct compliance / harmful enumeration / unsafe compliance | 691 | 823 | 411, 422 | 146, 456 | 662 |
+
+## Table 3
 
 **Performance comparison between BNRM and BT on four different datasets under the lowest-performing BNRM setting, $\eta = 10^{-6}$.**
 
@@ -6,3 +40,15 @@
 |---|---:|---:|---:|---:|
 | BT | 68.8 | 70.3 | 69.1 | 64.5 |
 | BNRM ($\eta = 10^{-6}$) | **73.9** | **82.4** | **73.3** | **72.7** |
+
+## Table 4
+
+## Short-response examples on Arena-Hard
+
+Representative manually inspected examples from Arena-Hard showing that relatively short BNRM responses are often associated with prompts whose high-quality answers are naturally concise, rather than indicating degraded response quality.
+
+| Cluster | Prompt | BNRM response | Baseline response |
+|---|---|---|---|
+| Lambda Calculus Object Classification | Make a one line python code to get list of primes from 1 to 200 use lambda function and list comprehension. | `primes = list(filter(lambda x: all(x % i for i in range(2, int(x**0.5) + 1)), range(2, 201)))` | Here is a one-liner Python code to get the list of primes from 1 to 200 using lambda function and list comprehension: `primes = [i for i in range(1, 201) if all(i % j != 0 for j in range(2, int(i**0.5) + 1))]` |
+| Tag Validation Format Rules | What are the solutions of \(5x^2 + 3x^2 = 8\)? If \(x\) is the length of a line segment what is \(x\)? | To solve the equation \(5x^2 + 3x^2 = 8\), we combine like terms: \(8x^2 = 8\). Next, we divide both sides by \(8\): \(x^2 = 1\). Now, we take the square root of both sides: \(x = \pm 1\). Since \(x\) is the length of a line segment, it cannot be negative. Therefore, the solution is \(x = 1\). | Let's start by combining like terms: \(5x^2 + 3x^2 = 8\). Combine the \(x^2\) terms: \(8x^2 = 8\). Now, divide both sides by \(8\): \(x^2 = 1\). To solve for \(x\), take the square root of both sides: \(x = \pm 1\). So, the solutions are \(x = 1\) and \(x = -1\). If \(x\) is the length of a line segment, then \(x\) can be either \(1\) or \(-1\). However, since length cannot be negative, the only valid solution is \(x = 1\). |
+| Bug-Related German Translation | A bug got into the computer case causing the software to bug out which was really starting to bug me but at least we discovered that no one had bugged the room. What does each instance of the word bug mean in the above sentence. | In the given sentence, the word "bug" has three different meanings: **1. Insect**: "A bug got into the computer case" — a small insect entered the computer case. **2. Error or malfunction**: "causing the software to bug out" — a software error or malfunction. **3. Hidden device or surveillance equipment**: "but at least we discovered that no one had bugged the room" — a hidden listening or surveillance device. | A clever play on words. In the sentence, the word "bug" has four different meanings: **1. Insect**: "A bug got into the computer case." **2. Error or glitch**: "causing the software to bug out." **3. Secretly installed device**: "which was really starting to bug me." **4. To annoy or bother**: "but at least we discovered that no one had bugged the room." So, in this interpretation, the word is assigned four meanings. |
