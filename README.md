@@ -19,7 +19,7 @@ RLHF alignment results on Arena Hard v0.1 for the PPO-tuned BNRM policy model ba
 
 ## Table 2
 
-Response length statistics on Arena-Hard v0.1 for the BNRM-aligned policy model based on Llama-3.1-8B-Instruct compared with the base Llama-3.1-8B-Instruct model.
+Response length statistics on Arena-Hard-v0.1 for the BNRM-aligned policy model based on Llama-3.1-8B-Instruct compared with the base.
 
 | Model | Count | Mean tokens | Min | Max | Total tokens |
 |---|---:|---:|---:|---:|---:|
