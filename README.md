@@ -17,8 +17,18 @@ RLHF alignment results on Arena Hard v0.1 for the PPO-tuned BNRM policy model ba
 | Human evaluator 2 | BNRM | Llama-3.1-8B-Instruct | 0.5000 | 0.3000 | 0.2000 |
 | Human Average | BNRM | Llama-3.1-8B-Instruct | 0.5100 | 0.1800 | 0.3100 |
 
-
 ## Table 2
+
+Response length statistics on Arena-Hard v0.1 for the BNRM-aligned policy model based on Llama-3.1-8B-Instruct compared with the base Llama-3.1-8B-Instruct model.
+
+| Model | Count | Mean tokens | Min | Max | Total tokens |
+|---|---:|---:|---:|---:|---:|
+| BNRM | 498 | 667.44 | 613.50 | 6 | 2048 | 332384 |
+| Base | 498 | 852.84 | 581.50 | 20 | 4097 | 424716 |
+
+<p align="right"><strong>Average token reduction of BNRM vs. Base: 185.41 tokens (21.74% lower)</strong></p>
+
+## Table 3
 
 Comparison of factor interpretability between the main-experiment BNRM and variants across different runs, a different model, and a different dataset. Here, the different model setting uses Gemma2-2B-it, and the different dataset setting uses Skywork-Preference-v0.2 (SP).
 
@@ -32,7 +42,7 @@ Comparison of factor interpretability between the main-experiment BNRM and varia
 | Low-quality / meaningless / chaotic outputs | 2 | -- | 93, 839 | 285 | 1 |
 | Unsafe direct compliance / harmful enumeration / unsafe compliance | 691 | 823 | 411, 422 | 146, 456 | 662 |
 
-## Table 3
+## Table 4
 
 **Performance comparison between BNRM and BT on four different datasets under the lowest-performing BNRM setting, $\eta = 10^{-6}$.**
 
@@ -41,7 +51,7 @@ Comparison of factor interpretability between the main-experiment BNRM and varia
 | BT | 68.8 | 70.3 | 69.1 | 64.5 |
 | BNRM ($\eta = 10^{-6}$) | **73.9** | **82.4** | **73.3** | **72.7** |
 
-## Table 4
+## Table 5
 
 Representative manually inspected examples from Arena-Hard showing that relatively short BNRM responses are often associated with prompts whose high-quality answers are naturally concise, rather than indicating degraded response quality.
 
