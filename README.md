@@ -23,8 +23,8 @@ Response length statistics on Arena-Hard-v0.1 for the BNRM-aligned policy model 
 
 | Model | Count | Mean tokens | Min | Max | Total tokens |
 |---|---:|---:|---:|---:|---:|
-| BNRM | 498 | 667.44 | 613.50 | 6 | 2048 | 332384 |
-| Base | 498 | 852.84 | 581.50 | 20 | 4097 | 424716 |
+| BNRM | 498 | 667.44 | 6 | 2048 | 332384 |
+| Base | 498 | 852.84 | 20 | 4097 | 424716 |
 
 ## Table 3
 
