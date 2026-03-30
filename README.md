@@ -26,8 +26,6 @@ Response length statistics on Arena-Hard v0.1 for the BNRM-aligned policy model 
 | BNRM | 498 | 667.44 | 613.50 | 6 | 2048 | 332384 |
 | Base | 498 | 852.84 | 581.50 | 20 | 4097 | 424716 |
 
-<p align="right"><strong>Average token reduction of BNRM vs. Base: 185.41 tokens (21.74% lower)</strong></p>
-
 ## Table 3
 
 Comparison of factor interpretability between the main-experiment BNRM and variants across different runs, a different model, and a different dataset. Here, the different model setting uses Gemma2-2B-it, and the different dataset setting uses Skywork-Preference-v0.2 (SP).
